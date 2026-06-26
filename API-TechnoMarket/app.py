@@ -10,7 +10,11 @@ catalogo = {
 
 @app.route("/")
 def inicio():
-    pass
+    return jsonify({
+        "mensaje": "Catalogo de productos de TechnoMarket",
+        "version": "1.0",
+        "endpoints": ["/productos", "/productos/<id>"]
+    })
 
 @app.get("/productos")
 def obtener_catalogo():
